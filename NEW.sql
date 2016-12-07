@@ -1,15 +1,12 @@
---CREATE VIEW view_jugadores
--- AS (SELECT equipo_id, nombre, equipo);
- --FROM jugadores;
- --WHERE salario > 2000;
- 
- CREATE VIEW vAlquileres
-AS
-(
-SELECT nombre,
-       apellidos,
-       matricula
-FROM tAlquileres,
-    tClientes
-WHERE ( tAlquileres.codigo_cliente = tClientes.codigo )
-) 
+
+
+  CREATE OR REPLACE FORCE VIEW "HR"."VIEW5" ("EQUIPO_ID", "NOMBRE", "SALARIO") AS 
+  SELECT
+  e.EQUIPO_ID,
+  j.NOMBRE,
+  j.SALARIO
+FROM
+  JUGADORES j,
+  EQUIPO e
+WHERE j.EQUIPO_ID = e.EQUIPO_ID
+AND   j.SALARIO > 2000;
