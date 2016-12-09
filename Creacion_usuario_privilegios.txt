@@ -1,0 +1,16 @@
+
+Create user prueba21
+Identified by password_prueba;
+
+-- creación usuario con contraseña
+
+
+Select * from all_users
+
+-- ver la lista de todos los usuarios
+
+
+GRANT CONNECT to prueba21;
+GRANT ALL privileges to prueba21 Identified by password_prueba;
+
+-- conectas el usuario en cuestión y le concedes privilegios, introduciendo tu contraseña
